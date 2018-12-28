@@ -57,6 +57,8 @@ header {
     font-size: 13px;
     letter-spacing: 1px;
     padding-top: 12px;
+    position: relative;
+    z-index: 1;
 }
 
 header p {
@@ -82,32 +84,49 @@ nav ul {
 }
 
 .outside-nav>li {
-    padding-left: 24px;
-    padding-right: 10px;
     float: left;
     position: relative;
 }
 
 .outside-nav a {
     color: #fff;
+    background-color: #000;
     text-transform: uppercase;
     text-decoration: none;
+    font-size: 12px;
+    padding: 13px 15px 11px 15px;
+    position: relative;
+    z-index: 1;
 }
 
 .inside-nav {
     position: absolute;
+    top: -80px;
+    left: -15px;
+    padding-bottom: 10px;
+    transition: 0.4s;
+    z-index: -1;
+}
+
+nav .show-menu:hover .inside-nav {
+    top: 26px;
+}
+
+.inside-nav ul {
+    position: relative;
+    top: 10px;
     background-color: #000;
-    padding: 10px 19px 5px 19px;
-    top: 36px;
-    left: -4px;
+    padding: 10px 0 5px 0;
     line-height: 25px;
 }
 
 .inside-nav a {
     text-transform: unset;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
-.inside-nav::before {
+.inside-nav ul::before {
     content: "";
     display: block;
     width: 15px;
