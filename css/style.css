@@ -25,6 +25,10 @@ body {
     clear: both;
 }
 
+button {
+    transition: 0.3s;
+}
+
 button, input[type="button"] {
     background-color: #24ba9f;
     padding: 12px 44px;
@@ -158,45 +162,78 @@ nav a:hover {
 
 .slider .wrapper {
     position: relative;
+    display: flex;
 }
 
 .slider .navigation {
-    color: #24ba9f;
-    font-size: 102px;
-    position: absolute;
-    top: 130px;
+    width: 50px;
+    height: 382px;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
-.slider .navigation:hover {
+.slider .navigation p {
+    color: #24ba9f;
+    font-size: 102px;
+    transition: 0.3s;
+}
+
+.slider .navigation p:hover {
     color: #008D75;
 }
 
-.slider .navigation:first-of-type {
-    left: 34px;
+.slider .slides {
+    width: calc(100% - 100px);
+    overflow: hidden;
+    position: relative;
 }
 
-.slider .navigation:last-of-type {
-    right: 34px;
+.slider .slide {
+    width: 100%;
+    position: absolute;
+}
+
+.slider .slide:nth-of-type(1) {
+    left: -880px;
+}
+
+.slider .slide:nth-of-type(2) {
+    left: 0;
+}
+
+.slider .slide:nth-of-type(3) {
+    left: 880px;
 }
 
 .slider .image {
-    background-image: url("../images/black_chair.png");
     background-position: center bottom;
     background-repeat: no-repeat;
-    background-size: 140%;
     width: 40%;
     height: 378px;
     float: left;
-    margin-left: 40px;
+}
+
+.slider .slide1 .image {
+    background-image: url("../images/red_chair.png");
+}
+
+.slider .slide2 .image {
+    background-image: url("../images/black_chair.png");
+}
+
+.slider .slide3 .image {
+    background-image: url("../images/orange_chair.png");
 }
 
 .slider .description {
-    margin-right: 132px;
     margin-top: 43px;
     padding-left: 10px;
     padding-right: 10px;
-    width: 412px;
+    width: 60%;
     text-align: center;
     float: right;
 }
@@ -215,6 +252,84 @@ nav a:hover {
 
 .slider button {
     margin-top: 18px;
+}
+
+.slider .dots {
+    list-style: none;
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    left: 459px;
+}
+
+.slider .dots .dot {
+    width: 15px;
+    height: 15px;
+    border: 3px solid #24ba9f;
+    border-radius: 50%;
+    margin: 0 3px;
+}
+
+.slider .dots .active {
+    background-color: #24ba9f;
+}
+
+/* Animations */
+
+@keyframes right-to-center {
+    0% {
+        left: 880px;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes center-to-left {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: -880px;
+    }
+}
+
+@keyframes center-to-right {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 880px;
+    }
+}
+
+@keyframes left-to-center {
+    0% {
+        left: -880px;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+.left2center {
+    animation: left-to-center 1s ease-in-out;
+    animation-fill-mode: both;
+}
+
+.right2center {
+    animation: right-to-center 1s ease-in-out;
+    animation-fill-mode: both;
+}
+
+.center2left {
+    animation: center-to-left 1s ease-in-out;
+    animation-fill-mode: both;
+}
+
+.center2right {
+    animation: center-to-right 1s ease-in-out;
+    animation-fill-mode: both;
 }
 
 /*----------------------------- Features --------------------------*/
@@ -474,7 +589,7 @@ section h2 {
 }
 
 .contact-img {
-    background-image: url("../images/red_chair.png");
+    background-image: url("../images/red_chair_2.png");
     height: 216px;
     background-repeat: no-repeat;
     background-position: top center;
