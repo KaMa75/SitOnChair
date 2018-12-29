@@ -71,7 +71,6 @@ function nextSlide(event) {
         cnt=0;
     }
     addClass(cnt);
-    console.log(slides);
 }
 
 function previousSlide(event) {
@@ -91,11 +90,7 @@ function previousSlide(event) {
         cnt=maxCnt;
     }
     addClass(cnt);
-    console.log(slides);
 }
 
 nextBtn.addEventListener('click', nextSlide);
 prevBtn.addEventListener('click', previousSlide);
-
-
-// console.log(cnt);
