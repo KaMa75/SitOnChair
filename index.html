@@ -168,31 +168,31 @@
 					<div class="drop_down_list">
 						<span class="list_label">Wybierz rodzaj</span>
 						<span class="list_arrow"></span>
-						<ul class="list_panel">
-							<li>Clair</li>
-							<li>Margarita</li>
-							<li>Selena</li>
+						<ul class="list_panel" data-name="title">
+							<li data-price="200">Chair Clair</li>
+							<li data-price="250">Chair Margarita</li>
+							<li data-price="280">Chair Selena</li>
 						</ul>
 					</div>
 					<div class="drop_down_list">
 						<span class="list_label">Wybierz kolor</span>
 						<span class="list_arrow"></span>
-						<ul class="list_panel">
-							<li>Czerwony</li>
-							<li>Czarny</li>
-							<li>Pomarańczowy</li>
+						<ul class="list_panel" data-name="color">
+							<li data-price="15">Czerwony</li>
+							<li data-price="0">Czarny</li>
+							<li data-price="20">Pomarańczowy</li>
 						</ul>
 					</div>
 					<div class="drop_down_list">
 						<span class="list_label">Wybierz materiał</span>
 						<span class="list_arrow"></span>
-						<ul class="list_panel">
-							<li>Tkanina</li>
-							<li>Skóra</li>
+						<ul class="list_panel" data-name="pattern">
+							<li data-price="0">Tkanina</li>
+							<li data-price="120">Skóra</li>
 						</ul>
 					</div>
-					<div class="checkbox check-box">
-						<input type="checkbox" id="transport" data-transport-price="200">
+					<div class="checkbox check-box" data-name="transport">
+						<input type="checkbox" id="transport" data-price="200">
 						<label for="transport">Transport</label>
 					</div>
 					<!--<div class="checkbox"></div>-->
@@ -227,7 +227,7 @@
 					<div class="sum_label">SUMA</div>
 					<div class="sum"><strong></strong></div>
 				</div>
-				<input type="button" value="Zamawiam">
+				<input type="button" value="Zamawiam" disabled>
 				<!-- <a href="" class="green_button">Zamawiam</a> -->
 			</section>
 		</div>
@@ -253,7 +253,7 @@
 					<label for="accept">
 						<span></span><p>Zgadzam się na przetwarzanie danych osobowych</p>
 					</label>
-					<input type="button" value="Wyślij">
+					<input type="button" value="Wyślij" disabled>
 				</div>
 			</form>
 		</div>		
@@ -278,4 +278,5 @@
 	</footer>	
 </body>
 <script src="js/slider.js"></script>
+<script src="js/forms.js"></script>
 </html>

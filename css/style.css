@@ -639,7 +639,6 @@ section h2 {
 .summary_panel {
     background-color: white;
     width:100%;
-    height:195px;
     padding:10px;
 }
   
@@ -651,8 +650,6 @@ section h2 {
     width: 200px;
     padding: 10px 30px;
     font-size: 24px;
-    /* display: inline-block;
-    font-family: 'ralewaymedium', Arial, Tahoma, sans-serif; */
     margin-top: 20px;
     margin-left: 29px;
     border-radius: 8px;
@@ -665,7 +662,7 @@ section h2 {
     vertical-align: top;
     padding-bottom:10px;
     border-bottom:1px solid #e7e7e7;
-    height: 135px;
+    min-height: 135px;
 }
   
 .panel_right {
@@ -674,9 +671,9 @@ section h2 {
     border-left:1px solid #e7e7e7;
     text-align: right;
     vertical-align: top;
-    padding-bottom:10px;
-    border-bottom:1px solid #e7e7e7;
-    height: 135px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e7e7e7;
+    min-height: 135px;
 }
   
 .panel_left h4, .panel_right h4 {
@@ -726,12 +723,17 @@ section h2 {
     right: 14px;
     top: 20px;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+.list_arrow_rotate {
+    transform: rotate(180deg);
 }
   
 .list_panel {
     background-color: white;
     border: 1px solid #ccc;
-    width: 288px;
+    width: 100%;
     padding-left: 15px;
     padding-bottom: 10px;
     list-style: none;
@@ -739,14 +741,24 @@ section h2 {
     left: 0px;
     z-index: 2;
     position: absolute;
-    top: 54px;
-    display:none;
+    top: 60px;
+    transition: 0.6s;
+    transform: scaleY(0);
+    transform-origin: 0 0;
+}
+
+.list_panel_show {
+    transform: scaleY(1);
 }
 
 .list_panel li {
     margin-top:10px;
     cursor: pointer;
     color: #585858;
+}
+
+.list_panel li:hover {
+    color: #27C7AB;
 }
   
 .title {
@@ -860,6 +872,11 @@ input[type="button"] {
     margin: 12px auto 0 auto;
     padding: 12px 0;
     transition: 0.3s;
+}
+
+input[type="button"]:disabled {
+    background-color: #5b5a5a;
+    cursor: unset;
 }
 
 /*----------------------------- Footer --------------------------*/
